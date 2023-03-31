@@ -92,11 +92,28 @@ public class Main {
         }
     }
 
-    public static void main(String[] args) {
-        String randomWord = Word.generate();
-        System.out.println(randomWord);
+    public static void main(String[] args) throws IOException {
+        boolean validInput = false;
+        WikiLink wikiLink = new WikiLink();
+        while (!validInput) {
+            try {
+                String wikiLink_Start=wikiLink.getRandomWikiPage();
+                String[] strArray = wikiLink_Start.split("/");
+                System.out.println(strArray[strArray.length-1]);
+                validInput = true;
+            } catch (Exception e) {
+
+            }
+        }
+        Leaderboard leaderboard = new Leaderboard();
+        leaderboard.addEntry("Alice: 10");
+        leaderboard.addEntry("Bob: 5");
+        leaderboard.addEntry("Charlie: 8");
+        leaderboard.saveData();
+        leaderboard.loadData();
+        leaderboard.printData();
         String firstWord = "Maryland";
         String lastWord = "Orange";
-        wikiRaceIterator(firstWord,lastWord);
+//        wikiRaceIterator(firstWord,lastWord);
     }
 }
