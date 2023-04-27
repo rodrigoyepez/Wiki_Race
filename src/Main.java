@@ -4,7 +4,7 @@ import java.util.Scanner;
 
 public class Main {
 //    Checks that user has entered valid choice
-    static String userChoiceCheck(String word,ArrayList text_and_urls ){
+    public static String userChoiceCheck(String word,ArrayList text_and_urls ){
         try {
             for (int i = 0; i < text_and_urls.size(); i++) {
                 String text = text_and_urls.get(i).toString();

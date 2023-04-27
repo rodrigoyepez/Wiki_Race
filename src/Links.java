@@ -13,7 +13,7 @@ public class Links {
         this.filteredTextAndUrls = removeUnwantedStrings(JsoupGetLinks(word));
     }
 
-    public ArrayList getLinks() {
+    public ArrayList<String> getLinks() {
         this.filteredTextAndUrls = removeUnwantedStrings(JsoupGetLinks(word));
         return filteredTextAndUrls;
     }
